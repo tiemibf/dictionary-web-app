@@ -2,6 +2,7 @@ import { globalStyles } from "./styles/globalStyles";
 import { BrowserRouter } from "react-router-dom";
 import Router from "./Router";
 import WordDefinition from "components/WordDefinition/WordDefinition";
+import { Header } from "components/Header/Header";
 
 const meanings = [
     {
@@ -45,6 +46,7 @@ function App() {
     return (
         <BrowserRouter>
             <Router />
+            <Header />
             <WordDefinition
                 word="keyboard"
                 phonetic={"/ˈkiːbɔːd/"}
