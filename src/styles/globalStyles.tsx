@@ -2,18 +2,37 @@ import { globalCss } from "@stitches/react";
 
 export const globalStyles = globalCss({
     "*": {
-        margin: 0, 
-        padding: 0, 
-        boxSizing: 'border-box',
+        margin: 0,
+        padding: 0,
+        boxSizing: "border-box",
+        fontFamily: "Inter, sans-serif"
     },
-    "body": {
-        background: "#f8f8f8",
-        color:"#29292e",
+    body: {
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center"
     },
-    "body, input, button, textarea": {
-        fontWeight:400,
-        fontSize:"16px",
-        fontFamily: "Roboto, sans-serif"
+    "#root": {
+        width: "40%",
+        maxWidth: "80%"
     },
-    
-})
+    h1: {
+        fontWeight: 700,
+        fontSize: "48px",
+        lineHeight: "68px"
+    },
+    ".phonetic": {
+        color: "#A445ED",
+        fontSize: "20px",
+        lineHeight: "24px"
+    },
+    ".word-definition-heading": {
+        marginBottom: "40px"
+    },
+    ".divider": {
+        width: "100%",
+        height: "1px",
+        backgroundColor: "#E9E9E9",
+        borderWidth: 0
+    }
+});
