@@ -21,14 +21,6 @@ export const globalStyles = globalCss({
         fontSize: "48px",
         lineHeight: "68px"
     },
-    ".phonetic": {
-        color: "#A445ED",
-        fontSize: "20px",
-        lineHeight: "24px"
-    },
-    ".word-definition-heading": {
-        marginBottom: "40px"
-    },
     ".divider": {
         width: "100%",
         height: "1px",
