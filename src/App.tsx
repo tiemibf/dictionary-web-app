@@ -4,57 +4,48 @@ import Router from "./Router";
 import WordDefinition from "components/WordDefinition/WordDefinition";
 import { Header } from "components/Header/Header";
 import { Input } from "components/Input/Input";
+import { useState } from "react";
+import { IMeaningsProps } from "components/WordDefinition/Word.type";
 
-const meanings = [
-    {
-        partOfSpeech: "exclamation",
-        definitions: [
-            {
-                definition:
-                    "used as a greeting or to begin a phone conversation.",
-                example: "hello there, Katie!",
-                synonyms: ["teste"],
-                antonyms: []
-            }
-        ]
+interface IPhoneticsProps {
+    audio: string;
+    text: string;
+    license?: {
+        name: string;
+        url:string;
+    };
+    sourceUrl?: string
+}
+
+export interface IWordResponse {
+    license: {
+        name: string;
+        url:string;
     },
-    {
-        partOfSpeech: "noun",
-        definitions: [
-            {
-                definition: "an utterance of ‘hello’; a greeting.",
-                example: "she was getting polite nods and hellos from people",
-                synonyms: [],
-                antonyms: []
-            }
-        ]
-    },
-    {
-        partOfSpeech: "verb",
-        definitions: [
-            {
-                definition: "say or shout ‘hello’.",
-                example: "I pressed the phone button and helloed",
-                synonyms: [],
-                antonyms: []
-            }
-        ]
-    }
-];
+    meanings: IMeaningsProps[];
+    phonetic: string;
+    phonetics: IPhoneticsProps;
+    sourceUrls: string[];
+    word: string
+}
 
 function App() {
     globalStyles();
+    const [wordObject, setWordObject] = useState<IWordResponse>()
+
     return (
         <BrowserRouter>
             <Router />
             <Header />
-            <Input />
-            <WordDefinition
-                word="keyboard"
-                phonetic={"/ˈkiːbɔːd/"}
-                meanings={meanings}
-                className="content"
-            />
+            <Input  setResponse={setWordObject}/>
+            {wordObject && 
+                <WordDefinition
+                    word={wordObject?.word}
+                    meanings={wordObject?.meanings}
+                    phonetic={wordObject?.phonetic}
+                    className="content"
+                />
+            }
         </BrowserRouter>
     );
 }

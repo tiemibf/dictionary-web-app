@@ -1,10 +1,10 @@
 import { WordDefinitionStyle, WordStyle } from "./Word.style";
-import { MeaningsProps, WordDefinitionProps } from "./Word.type";
+import { IMeaningsProps, WordDefinitionProps } from "./Word.type";
 
 export const WordMeaningBlock = ({
     partOfSpeech,
     definitions
-}: MeaningsProps) => {
+}: IMeaningsProps) => {
     return (
         <WordStyle>
             <div className="partOfSpeech">

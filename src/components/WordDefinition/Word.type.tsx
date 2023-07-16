@@ -1,13 +1,15 @@
 export interface WordDefinitionProps {
     word: string;
     phonetic: string | string[];
-    meanings: MeaningsProps[];
+    meanings: IMeaningsProps[];
     className?: string;
 }
 
-export interface MeaningsProps {
+export interface IMeaningsProps {
     partOfSpeech: string;
     definitions: DefinitionsProps[];
+    antonyms?: string[];
+    synonyms?: string[]
 }
 
 export interface DefinitionsProps {
