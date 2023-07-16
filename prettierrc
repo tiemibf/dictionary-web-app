@@ -1,0 +1,29 @@
+{
+    "printWidth": 100,
+    "singleQuote": false,
+    "jsxSingleQuote": false,
+    "useTabs": true,
+    "semi": true,
+    "trailingComma": "none",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "arrowParens": "always",
+    "proseWrap": "preserve",
+    "htmlWhitespaceSensitivity": "ignore",
+    "endOfLine": "auto",
+    "embeddedLanguageFormatting": "off",
+    "overrides": [
+        {
+            "files": "*.md",
+            "options": {
+                "parser": "markdown"
+            }
+        },
+        {
+            "files": "*.feature",
+            "options": {
+                "parser": "cucumber"
+            }
+        }
+    ]
+}
