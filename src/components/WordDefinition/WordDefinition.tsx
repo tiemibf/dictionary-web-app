@@ -1,36 +1,12 @@
-import { WordDefinitionStyle, WordStyle } from "./Word.style";
-import { IMeaningsProps, WordDefinitionProps } from "./Word.type";
+import { WordMeaningBlock } from "components/WordMeaningBlock/WordMeaningBlock";
+import { WordDefinitionStyle } from "./Word.style";
+import { WordDefinitionProps } from "./Word.type";
 
-export const WordMeaningBlock = ({
-    partOfSpeech,
-    definitions
-}: IMeaningsProps) => {
-    return (
-        <WordStyle>
-            <div className="partOfSpeech">
-                <h3>{partOfSpeech}</h3>
-                <hr className="divider" />
-            </div>
-            <h4>Meaning</h4>
-            {definitions.map((definition) => {
-                return (
-                    <>
-                        <li>{definition.definition}</li>
-                        <p className="example">"{definition.example}"</p>
-                        {definition?.synonyms?.length !== 0 && (
-                            <div className="synonyms">
-                                <h4>Synonyms</h4>
-                                <p>{definition.synonyms}</p>
-                            </div>
-                        )}
-                    </>
-                );
-            })}
-        </WordStyle>
-    );
-};
-
-const WordDefinition = ({ word, phonetic, meanings }: WordDefinitionProps) => {
+export const WordDefinition = ({
+    word,
+    phonetic,
+    meanings
+}: WordDefinitionProps) => {
     return (
         <WordDefinitionStyle>
             <div className="word-definition-heading">
@@ -51,5 +27,3 @@ const WordDefinition = ({ word, phonetic, meanings }: WordDefinitionProps) => {
         </WordDefinitionStyle>
     );
 };
-
-export default WordDefinition;
