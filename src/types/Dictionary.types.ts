@@ -24,7 +24,7 @@ interface IPhonetics {
   license?: ILicense;
 }
 
-export interface IWordResponse {
+export interface GetDefinitionResponse {
   word: string;
   phonetic: string;
   phonetics: IPhonetics[];

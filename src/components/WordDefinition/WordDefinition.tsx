@@ -1,10 +1,10 @@
 import { IconPlay } from "assets/images/icon-play";
 import { WordMeaningBlock } from "components/WordMeaningBlock/WordMeaningBlock";
-import { IWordResponse } from "types/Dictionary.types";
+import { GetDefinitionResponse } from "types/Dictionary.types";
 import { WordDefinitionStyle } from "./Word.style";
 
 export interface IWordDefinitionProps {
-    word: IWordResponse;
+    word: GetDefinitionResponse;
 }
 
 export const WordDefinition = ({ word }: IWordDefinitionProps) => {
