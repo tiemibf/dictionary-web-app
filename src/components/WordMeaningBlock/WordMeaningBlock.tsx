@@ -1,10 +1,12 @@
 import { WordStyle } from "components/WordDefinition/Word.style";
-import { IMeaningsProps } from "components/WordDefinition/Word.type";
+import { IDefinitions, IMeanings } from "types/Dictionary.types";
+
+type IMeaningProps = IMeanings;
 
 export const WordMeaningBlock = ({
     partOfSpeech,
     definitions
-}: IMeaningsProps) => {
+}: IMeaningProps) => {
     return (
         <WordStyle>
             <div className="partOfSpeech">
@@ -12,7 +14,7 @@ export const WordMeaningBlock = ({
                 <hr className="divider" />
             </div>
             <h4>Meaning</h4>
-            {definitions.map((definition) => {
+            {definitions.map((definition: IDefinitions) => {
                 return (
                     <>
                         <li>{definition.definition}</li>

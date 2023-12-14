@@ -1,17 +1,23 @@
+import { IconPlay } from "assets/images/icon-play";
 import { WordMeaningBlock } from "components/WordMeaningBlock/WordMeaningBlock";
+import { IWordResponse } from "types/Dictionary.types";
 import { WordDefinitionStyle } from "./Word.style";
-import { WordDefinitionProps } from "./Word.type";
 
-export const WordDefinition = ({
-    word,
-    phonetic,
-    meanings
-}: WordDefinitionProps) => {
+export interface IWordDefinitionProps {
+    word: IWordResponse;
+}
+
+export const WordDefinition = ({ word }: IWordDefinitionProps) => {
+    const { word: wordName, phonetic, meanings } = word;
+
     return (
         <WordDefinitionStyle>
             <div className="word-definition-heading">
-                <h1>{word}</h1>
-                <p className="phonetic">{phonetic}</p>
+                <div>
+                    <h1>{wordName}</h1>
+                    <p className="phonetic">{phonetic}</p>
+                </div>
+                <IconPlay />
             </div>
             <div>
                 {meanings.map((meaning) => {
@@ -19,11 +25,12 @@ export const WordDefinition = ({
                         <WordMeaningBlock
                             partOfSpeech={meaning.partOfSpeech}
                             definitions={meaning.definitions}
+                            key={meaning.partOfSpeech}
                         />
                     );
                 })}
             </div>
-            <rect className="divider" />
+            <div className="divider" />
         </WordDefinitionStyle>
     );
 };

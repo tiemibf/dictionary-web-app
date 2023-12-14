@@ -13,14 +13,7 @@ const DictionaryPage = () => {
             <Input setResponse={setWordDefinitions} />
             {wordDefinitions &&
                 wordDefinitions.map((definition) => {
-                    return (
-                        <WordDefinition
-                            word={definition?.word}
-                            meanings={definition?.meanings}
-                            phonetic={definition?.phonetic}
-                            className="content"
-                        />
-                    );
+                    return <WordDefinition word={definition} />;
                 })}
         </>
     );

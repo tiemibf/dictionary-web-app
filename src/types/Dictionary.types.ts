@@ -1,23 +1,34 @@
-import { IMeaningsProps } from "components/WordDefinition/Word.type";
+export interface IDefinitions {
+  definition: string | string[];
+  example?: string;
+  synonyms?: string[];
+  antonyms?: string[];
+}
 
-interface IPhoneticsProps {
-  audio: string;
+export interface IMeanings {
+  partOfSpeech: string;
+  definitions: IDefinitions[];
+  antonyms?: string[];
+  synonyms?: string[];
+}
+
+interface ILicense {
+  name: string;
+  url: string;
+}
+
+interface IPhonetics {
   text: string;
-  license?: {
-    name: string;
-    url: string;
-  };
+  audio: string;
   sourceUrl?: string;
+  license?: ILicense;
 }
 
 export interface IWordResponse {
-  license: {
-    name: string;
-    url: string;
-  };
-  meanings: IMeaningsProps[];
-  phonetic: string;
-  phonetics: IPhoneticsProps;
-  sourceUrls: string[];
   word: string;
+  phonetic: string;
+  phonetics: IPhonetics[];
+  meanings: IMeanings[];
+  license: ILicense;
+  sourceUrls: string[];
 }
