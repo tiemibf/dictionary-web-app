@@ -1,15 +1,13 @@
 import { SearchIcon } from "assets/images/SearchIcon";
-import { FormStyle } from "./Input.style";
-import { Dispatch, SetStateAction, useState } from "react";
 import axios from "axios";
-import WordDefinition from "components/WordDefinition/WordDefinition";
-import { IWordResponse } from "App";
-
+import { Dispatch, SetStateAction, useState } from "react";
+import { IWordResponse } from "types/Dictionary.types";
+import { FormStyle } from "./Input.style";
 interface IInputProps {
-setResponse: Dispatch<SetStateAction<IWordResponse | undefined>>
+    setResponse: Dispatch<SetStateAction<IWordResponse[] | undefined>>;
 }
 
-export const Input = ({setResponse}: IInputProps) => {
+export const Input = ({ setResponse }: IInputProps) => {
     const [inputValue, setInputValue] = useState("");
 
     const handleChange = (event: any) => {
@@ -22,8 +20,7 @@ export const Input = ({setResponse}: IInputProps) => {
             const { data } = await axios.get(
                 `https://api.dictionaryapi.dev/api/v2/entries/en/${inputValue}`
             );
-            const wordObject = data[0]
-           setResponse(wordObject)
+            setResponse(data);
         } catch (error: any) {
             console.log(error?.response?.data["title"]);
         }

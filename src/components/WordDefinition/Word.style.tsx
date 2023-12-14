@@ -44,6 +44,9 @@ export const WordDefinitionStyle = styled("div", {
         lineHeight: "24px"
     },
     ".word-definition-heading": {
-        marginBottom: "40px"
+        marginBottom: "40px",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center"
     }
 });
