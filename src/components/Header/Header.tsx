@@ -1,4 +1,4 @@
-import { LogoIcon } from "assets/images/logo";
+import { LogoIcon } from "../../assets/images/logo";
 import { HeaderStyle } from "./Header.style";
 
 export const Header = () => {

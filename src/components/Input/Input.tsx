@@ -1,10 +1,12 @@
-import { SearchIcon } from "assets/images/SearchIcon";
+
 import axios from "axios";
 import { Dispatch, SetStateAction, useState } from "react";
-import { IWordResponse } from "types/Dictionary.types";
+import { SearchIcon } from "../../assets/images/SearchIcon";
+import { GetDefinitionResponse } from "../../types/Dictionary.types";
 import { FormStyle } from "./Input.style";
+
 interface IInputProps {
-    setResponse: Dispatch<SetStateAction<IWordResponse[] | undefined>>;
+    setResponse: Dispatch<SetStateAction<GetDefinitionResponse[] | undefined>>;
 }
 
 export const Input = ({ setResponse }: IInputProps) => {

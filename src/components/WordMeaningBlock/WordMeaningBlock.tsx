@@ -1,5 +1,5 @@
-import { WordStyle } from "components/WordDefinition/Word.style";
-import { IDefinitions, IMeanings } from "types/Dictionary.types";
+import { WordStyle } from "../../components/WordDefinition/Word.style";
+import { IDefinitions, IMeanings } from "../../types/Dictionary.types";
 
 type IMeaningProps = IMeanings;
 

@@ -1,6 +1,6 @@
-import { IconPlay } from "assets/images/icon-play";
-import { WordMeaningBlock } from "components/WordMeaningBlock/WordMeaningBlock";
-import { GetDefinitionResponse } from "types/Dictionary.types";
+import { IconPlay } from "../../assets/images/icon-play";
+import { WordMeaningBlock } from "../../components/WordMeaningBlock/WordMeaningBlock";
+import { GetDefinitionResponse } from "../../types/Dictionary.types";
 import { WordDefinitionStyle } from "./Word.style";
 
 export interface IWordDefinitionProps {
