@@ -29,7 +29,7 @@ export const Input = ({ setResponse }: IInputProps) => {
     };
 
     return (
-        <FormStyle onSubmit={handleSearch}>
+        <FormStyle onSubmit={handleSearch} role="form">
             <input type="text" value={inputValue} onChange={handleChange} />
             <button type="submit">
                 <SearchIcon />
