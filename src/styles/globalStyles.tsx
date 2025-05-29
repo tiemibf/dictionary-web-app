@@ -1,30 +1,34 @@
-import { globalCss } from "@stitches/react";
+import { createGlobalStyle } from "styled-components";
 
-export const globalStyles = globalCss({
-    "*": {
-        margin: 0,
-        padding: 0,
-        boxSizing: "border-box",
-        fontFamily: "Inter, sans-serif"
-    },
-    body: {
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center"
-    },
-    "#root": {
-        width: "40%",
-        maxWidth: "80%"
-    },
-    h1: {
-        fontWeight: 700,
-        fontSize: "48px",
-        lineHeight: "68px"
-    },
-    ".divider": {
-        width: "100%",
-        height: "1px",
-        backgroundColor: "#E9E9E9",
-        borderWidth: 0
+export const GlobalStyles = createGlobalStyle`
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Inter, sans-serif;
     }
-});
+    
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
+    
+    #root {
+        width: 40%;
+        max-width: 80%;
+    }
+    
+    h1 {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 68px;
+    }
+    
+    .divider {
+        width: 100%;
+        height: 1px;
+        background-color: #E9E9E9;
+        border-width: 0;
+    }
+`;
