@@ -1,59 +1,26 @@
-import { globalStyles } from "./styles/globalStyles";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom";
 import Router from "./Router";
-import WordDefinition from "components/WordDefinition/WordDefinition";
-import { Header } from "components/Header/Header";
-
-const meanings = [
-    {
-        partOfSpeech: "exclamation",
-        definitions: [
-            {
-                definition:
-                    "used as a greeting or to begin a phone conversation.",
-                example: "hello there, Katie!",
-                synonyms: ["teste"],
-                antonyms: []
-            }
-        ]
-    },
-    {
-        partOfSpeech: "noun",
-        definitions: [
-            {
-                definition: "an utterance of ‘hello’; a greeting.",
-                example: "she was getting polite nods and hellos from people",
-                synonyms: [],
-                antonyms: []
-            }
-        ]
-    },
-    {
-        partOfSpeech: "verb",
-        definitions: [
-            {
-                definition: "say or shout ‘hello’.",
-                example: "I pressed the phone button and helloed",
-                synonyms: [],
-                antonyms: []
-            }
-        ]
-    }
-];
+import { globalStyles } from "./styles/globalStyles";
 
 function App() {
     globalStyles();
+
+    const queryClient = new QueryClient({
+        defaultOptions: {
+            queries: {
+                refetchOnWindowFocus: true,
+                retry: false
+            }
+        }
+    });
+
     return (
-        <BrowserRouter>
-            <Router />
-            <Header />
-            <WordDefinition
-                word="keyboard"
-                phonetic={"/ˈkiːbɔːd/"}
-                meanings={meanings}
-                className="content"
-            />
-        </BrowserRouter>
+        <QueryClientProvider client={queryClient}>
+            <BrowserRouter>
+                <Router />
+            </BrowserRouter>
+        </QueryClientProvider>
     );
 }
 

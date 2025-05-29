@@ -1,9 +1,13 @@
+import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-import { Suspense } from "react"
-import { Home } from "./pages/Home/Home";
+
+const DictionaryPage = lazy(
+    () => import("./pages/DictionaryPage/DictionaryPage")
+);
+const Home = lazy(() => import("./pages/Home/Home"));
 
 const Router = (): JSX.Element => {
-    return(
+    return (
         <Routes>
             <Route
                 path="/"
@@ -13,8 +17,16 @@ const Router = (): JSX.Element => {
                     </Suspense>
                 }
             />
+            <Route
+                path="/dictionary"
+                element={
+                    <Suspense>
+                        <DictionaryPage />
+                    </Suspense>
+                }
+            />
         </Routes>
-    )
-}
+    );
+};
 
 export default Router;
