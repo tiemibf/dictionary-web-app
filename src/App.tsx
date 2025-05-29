@@ -1,10 +1,9 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom";
 import Router from "./Router";
-import { globalStyles } from "./styles/globalStyles";
+import { GlobalStyles } from "./styles/globalStyles";
 
 function App() {
-    globalStyles();
 
     const queryClient = new QueryClient({
         defaultOptions: {
@@ -17,10 +16,12 @@ function App() {
 
     return (
         <QueryClientProvider client={queryClient}>
+            <GlobalStyles />
             <BrowserRouter>
                 <Router />
             </BrowserRouter>
         </QueryClientProvider>
+
     );
 }
 

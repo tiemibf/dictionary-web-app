@@ -1,9 +1,9 @@
-import { styled } from "@stitches/react";
+import { styled } from "styled-components";
 
-export const HeaderStyle = styled("div", {
-    margin: "50px 0",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    color: "#757575"
-});
+export const HeaderStyle = styled.div`
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #757575;
+`;
